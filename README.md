@@ -58,5 +58,5 @@ Alen Trošt
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/LinkedIn_Login.git
+git clone https://github.com/alentrost/LinkedIn_Login.git
 ```

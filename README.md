@@ -46,11 +46,6 @@ LinkedIn_Login/
 3. Fill in the fields and test real-time password validation.
 4. Enjoy the clean LinkedIn simulation.
 
-## SIMULATION CREDENTIALS
-
-**email:** `user@example.com`  
-**password:** `LinkedIn123!`
-
 ## AUTHOR
 
 Alen Trošt

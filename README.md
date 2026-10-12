@@ -1,6 +1,6 @@
 # LinkedIn Login
 
-is a simple school project that simulates the login and registration system of a professional platform, specifically LinkedIn. This project focuses on user authentication, form validation, and basic front-end design.
+is a simple school project that simulates the login and registration system of a professional platform, specifically LinkedIn. This project focuses on user authentication, form validation, and basic functionality for a polished front-end experience.
 
 ## FEATURES
 
@@ -47,8 +47,8 @@ LinkedIn_Login/
 4. Enjoy the clean LinkedIn simulation.
 
 OR
-  Open it from GitHub Pages: [LinkedIn_Login](alentrost.github.io/LinkedIn_Login/)
 
+Open it from GitHub Pages: [LinkedIn_Login](https://alentrost.github.io/LinkedIn_Login/)
 
 ## AUTHOR
 

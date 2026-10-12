@@ -46,7 +46,7 @@ LinkedIn_Login/
 3. Fill in the fields and test real-time password validation.
 4. Enjoy the clean LinkedIn simulation.
 
-#OR
+OR
   Open it from GitHub Pages: [LinkedIn_Login](alentrost.github.io/LinkedIn_Login/)
 
 

@@ -1,187 +1,362 @@
-#logo {
-	width: 150px;
-	height: 60px;
-	object-fit: contain;
-	display: block;
-    margin-left:20px;
-}
-#border {
-    width: 450px;
-    border: 1px solid #ccc;
-    margin: 20px auto;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-#text {
-    text-align: left;
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-family: "Segoe UI", "Open Sans", sans-serif;
-}
-#policy {
-    font-size: 12px;
-    text-align: left;
-    margin-top: 20px;
-}
-#pass-reset {
-    text-size: 17px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-
-}
-.remember-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 12px 0 18px;
-}
-#remember-me {
-    width: 18px;
-    height: 18px;
+/* osnovna postavitev strani */
+* {
     margin: 0;
-    border: 1px solid #666;
-    border-radius: 4px;
-    background: #fff;
-    position: relative;
-    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
 }
-#remember-me:checked {
-    background: #0a66c2;
-    border-color: #0a66c2;
-}
-#remember-me:checked::after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 1px;
-    width: 5px;
-    height: 10px;
-    border: solid #fff;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
-.remember-label {
-    font-size: 15px;
-    color: #1f1f1f;
-    cursor: pointer;
-}
-.social-button {
-    width: 100%;
-    height: 42px;
-    margin-top: 14px;
-    border: 1px solid #666;
-    border-radius: 22px;
-    background-color: #fff;
-    color: #1f1f1f;
+
+body {
+    min-height: 100vh;
+    background-color: #f3f2f0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.9);
     display: flex;
+    flex-direction: column;
+}
+
+/* povezave */
+a {
+    color: #0a66c2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* glava in logotip */
+.header {
+    padding: 24px 32px 0;
+}
+
+#logo {
+    width: 135px;
+    height: 34px;
+    display: block;
+}
+
+.signup-header #logo {
+    margin: 20px 30px 10px;
+}
+
+/* glvna vsebina */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    font: 600 15px "Segoe UI", "Open Sans", sans-serif;
-    cursor: pointer;
-}
-.social-button:hover {
-    background-color: #f3f6f8;
-}
-.social-button:focus-visible {
-    outline: 3px solid #70b5f9;
-    outline-offset: 2px;
-}
-.google-icon {
-    color: #4285f4;
-    font: 700 20px Arial, sans-serif;
-}
-.apple-icon {
-    color: #333;
-    font-size: 21px;
-    line-height: 1;
+    padding: 10px 16px 24px;
 }
 
-.divider {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 18px 0;
-    color: #666;
-    font-size: 14px;
+.signup-title {
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+    margin: 10px 16px 20px;
 }
-.divider::before,
-.divider::after {
-    content: "";
-    height: 1px;
-    background-color: #ddd;
+
+/* obrazec/kartica */
+#border {
+    width: 400px;
+    max-width: 100%;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 24px 24px 28px;
+    box-sizing: border-box;
+}
+
+#text {
+    font-size: 32px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 4px;
+}
+
+.subtext {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+}
+
+/* polja v obrazcu */
+.name-row {
+    display: flex;
+    gap: 12px;
+}
+
+.name-col {
     flex: 1;
 }
+
 .field-label {
     display: block;
-    margin-top: 10px;
-    color: #333;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    color: rgba(0, 0, 0, 0.7);
     font-size: 14px;
+    font-weight: 600;
 }
+
 .text-field {
     width: 100%;
     height: 44px;
     box-sizing: border-box;
-    border: 1px solid #777;
+    border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 4px;
-    padding: 8px 10px;
-    font-size: 16px;
+    padding: 0 12px;
+    font-size: 15px;
+    font-family: inherit;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
+
 .text-field:focus {
     border-color: #0a66c2;
-    outline: 2px solid #b9dcf7;
+    box-shadow: 0 0 0 1px #0a66c2;
 }
+
+/* opozorilo za neujemajoce geslo */
+.error-message {
+    display: none;
+    color: #cc1011;
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.text-field.input-error {
+    border-color: #cc1011;
+}
+
+.text-field.input-error:focus {
+    border-color: #cc1011;
+    box-shadow: 0 0 0 1px #cc1011;
+}
+
+/* prilagoditev polja za datum */
+input[type="date"].text-field {
+    font-family: inherit;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* geslo z gumbom za prikaz/skritje */
 .password-field {
     position: relative;
 }
+
 .password-field .text-field {
-    padding-right: 44px;
+    padding-right: 64px;
 }
+
 .password-toggle {
     position: absolute;
     top: 50%;
     right: 8px;
-    width: 32px;
-    height: 32px;
     transform: translateY(-50%);
-    border: 0;
-    border-radius: 50%;
+    border: none;
     background: transparent;
-    color: #444;
-    font-size: 20px;
+    color: #0a66c2;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.password-toggle:hover {
+    background-color: #ebf4fd;
+    text-decoration: underline;
+}
+
+/* ponastavitev gesla */
+#pass-reset {
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+/* zapomni si me */
+.remember-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0 18px;
+}
+
+#remember-me {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #0a66c2;
     cursor: pointer;
 }
-.password-toggle:hover {
-    background-color: #eef3f8;
+
+.remember-label {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
 }
-.password-toggle:focus-visible {
-    outline: 2px solid #0a66c2;
-}
-.eye-icon {
-    position: relative;
-    display: inline-block;
-    line-height: 1;
-}
-.password-toggle.is-hidden .eye-icon::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -2px;
-    width: 24px;
-    height: 2px;
-    background-color: #444;
-    transform: translateY(-50%) rotate(45deg);
-}
-#sign-in {
-    background-color: rgb(11, 103, 195);
+
+/* glavni gumbi za potrditev */
+#sign-in,
+#sign-up {
+    width: 100%;
+    height: 48px;
+    background-color: #0a66c2;
     border: none;
-    color: white;
-    border-radius: 22px;
+    color: #ffffff;
+    border-radius: 28px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+#sign-in:hover,
+#sign-up:hover {
+    background-color: #004182;
+}
+
+/* locilnik "or" */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.15);
+    flex: 1;
+}
+
+/* pogoji poslovanja*/
+#policy {
+    font-size: 12px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    margin: 14px 0;
+}
+
+/* druzbena omrezja) */
+.social-button {
     width: 100%;
     height: 42px;
-    font-size: 18px;
+    margin-top: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 28px;
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
 }
-#sign-in:hover {
-    background-color: rgb(10, 48, 131);
+
+.social-button:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.google-svg,
+.apple-svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* spodnja vrstica z vprasanjem */
+.join-row {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.9);
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* noga strani */
+#footer {
+    margin-top: auto;
+    padding: 16px 24px;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.footer-logo {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.footer-logo-in {
+    background-color: #0a66c2;
+    color: #ffffff;
+    padding: 0 3px;
+    border-radius: 2px;
+    margin-left: 1px;
+}
+
+.footer-content a {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+}
+
+.footer-content a:hover {
+    color: #0a66c2;
+    text-decoration: underline;
+}
+
+/* prilagoditev za manjse zaslone */
+@media (max-width: 480px) {
+    .header {
+        padding: 16px 20px 0;
+    }
+
+    #border {
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        padding: 10px 4px;
+    }
+
+    .signup-title {
+        font-size: 24px;
+    }
+
+    .name-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .footer-content {
+        gap: 10px;
+    }
 }

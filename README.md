@@ -1,37 +1,63 @@
-# Učna naloga: kopija LinkedIn prijavnega in registracijskega obrazca
+# LinkedIn Login
 
-To je spletna stran, ki predstavlja kopijo prijavnega (`index.html`) in registracijskega (`signup.html`) obrazca LinkedIn. Cilj naloge je utrditi osnove HTML in CSS ter naučiti se oblikovanja spletnega vmesnika po uradnem vzorcu platforme LinkedIn.
+is a simple school project that simulates the login and registration system of a professional platform, specifically LinkedIn. This project focuses on user authentication, form validation, and basic front-end design.
 
-## Opis strani
+## FEATURES
 
-### 1. Prijava (`index.html`)
-Na prijavni strani je prikazan obrazec z:
-- uradnim LinkedIn logotipom,
-- naslovom "Sign in" in podnaslovom "Stay updated on your professional world",
-- poljema za e-poštni naslov ali telefon in geslo,
-- gumbom za prikaz/skritje gesla ("Show" / "Hide"),
-- povezavo "Forgot password?",
-- potrditvenim poljem "Keep me signed in",
-- gumbom "Sign in",
-- ločilnikom "or",
-- gumboma za prijavo prek storitev Google in Apple,
-- povezavo "Join now", ki vodi na registracijsko stran (`signup.html`),
-- uradno nogo s povezavami in avtorskimi pravicami.
+* **USER REGISTRATION**: Create a new account with first name, last name, email, password, confirm password, and date of birth.
+* **USER LOGIN**: Authenticate and access the platform using email or phone and password.
+* **FORM VALIDATION**: Real-time password matching validation and required input checks.
+* **RESPONSIVE DESIGN**: Clean and simple interface for a user-friendly experience styled to match LinkedIn.
 
-### 2. Registracija (`signup.html`)
-Na registracijski strani je prikazan obrazec za ustvarjanje novega računa:
-- naslov "Make the most of your professional life",
-- polji za ime in priimek (**First name**, **Last name**),
-- polje za e-pošto (**Email**),
-- polje za geslo (**Password**) z možnostjo prikaza/skritja gesla,
-- polje za datum rojstva (**Date of birth**),
-- pravno obvestilo o pogojih uporabe in zasebnosti,
-- gumb "Agree & Join",
-- možnost registracije z Google računom,
-- povezava nazaj na prijavo ("Already on LinkedIn? Sign in" -> `index.html`),
-- uradna noga.
+## TECHNOLOGIES USED
 
-## Uporabljene tehnologije
-- **HTML5**: Semantična struktura obrazcev in elementov.
-- **CSS3** (`css/style.css`): Enoten LinkedIn slog (barvna paleta, zaobljeni robovi, sence, odzivnost).
-- **JavaScript**: Preprost skript za prikaz in skritje gesla.
+* **FRONT-END**: HTML, CSS, JavaScript
+
+## SCREENSHOTS
+
+### Login
+
+![Login](pictures/login.png)
+
+### Register
+
+![Register](pictures/register.png)
+
+## FOLDER STRUCTURE
+
+```
+LinkedIn_Login/
+│
+├── index.html          # Main login HTML file
+├── signup.html         # Registration HTML file
+├── css/
+│   └── style.css       # Stylesheets
+├── pictures/
+│   ├── favicon.ico     # Favicon
+│   ├── login.png       # Screenshot of login page
+│   └── register.png    # Screenshot of register page
+└── README.md           # Project documentation
+```
+
+## USAGE
+
+1. Open `index.html` in a browser to explore the interface.
+2. Click "Join now" to navigate to the registration page (`signup.html`).
+3. Fill in the fields and test real-time password validation.
+4. Enjoy the clean LinkedIn simulation.
+
+## SIMULATION CREDENTIALS
+
+**email:** `user@example.com`  
+**password:** `LinkedIn123!`
+
+## AUTHOR
+
+Alen Trošt
+
+## INSTALLATION
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/LinkedIn_Login.git
+```

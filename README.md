@@ -47,7 +47,7 @@ LinkedIn_Login/
 4. Enjoy the clean LinkedIn simulation.
 
 #OR
-  Open it from GitHub Pages: alentrost.github.io/LinkedIn_Login/
+  Open it from GitHub Pages: [LinkedIn_Login](alentrost.github.io/LinkedIn_Login/)
 
 
 ## AUTHOR

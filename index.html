@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LinkedIn Login, Sign in | LinkedIn</title>
-  <link rel="icon" type="image/x-icon" href="slike/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="pictures/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
       <h1 id="text">Sign in</h1>
       <p class="subtext">Stay updated on your professional world</p>
 
-      <form action="#" method="post">
+      <form id="signin-form">
         <label class="field-label" for="email">Email or phone</label>
         <input id="email" class="text-field" type="text" autocomplete="username" required>
         
@@ -49,10 +49,11 @@
         </div>
 
         <div id="submit">
-          <a id="sign-in" href="index.html" role="button">Sign in</a>
+          <button id="sign-in" type="submit">Sign in</button>
         </div>
       </form>
 
+      <p id="signin-status" role="status" aria-live="polite"></p>
       <p id="policy">By continuing, you agree to the LinkedIn <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</p>
 
       <div class="divider" role="separator" aria-label="or">
@@ -105,6 +106,16 @@
         password.type = isHidden ? "text" : "password";
         togglePassword.textContent = isHidden ? "Hide" : "Show";
         togglePassword.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
+      });
+    }
+
+    const signinForm = document.querySelector("#signin-form");
+    const signinStatus = document.querySelector("#signin-status");
+
+    if (signinForm && signinStatus) {
+      signinForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        signinStatus.textContent = "The fields are filled in. Account sign-in needs a server and is not connected on this static site.";
       });
     }
   </script>

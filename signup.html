@@ -30,7 +30,7 @@
     <h1 class="signup-title">Join LinkedIn now — it’s free!</h1>
 
     <div id="border">
-      <form action="#" method="post">
+      <form id="signup-form">
         
         <div class="name-row">
           <div class="name-col">
@@ -65,7 +65,7 @@
         <p id="policy">By clicking Agree & Join or Continue, you agree to the LinkedIn <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</p>
 
         <div id="submit">
-          <a id="sign-up" href="index.html" role="button">Agree & Join</a>
+          <button id="sign-up" type="submit">Agree &amp; Join</button>
         </div>
       </form>
 
@@ -127,6 +127,7 @@
     }
 
     const passwordError = document.querySelector("#password-error");
+    const signupForm = document.querySelector("#signup-form");
 
     function checkPasswordMatch() {
       if (confirmPassword.value && password.value !== confirmPassword.value) {
@@ -143,6 +144,13 @@
     if (password && confirmPassword && passwordError) {
       password.addEventListener("input", checkPasswordMatch);
       confirmPassword.addEventListener("input", checkPasswordMatch);
+    }
+
+    if (signupForm) {
+      signupForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        window.location.assign("index.html");
+      });
     }
   </script>
 

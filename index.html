@@ -53,7 +53,6 @@
         </div>
       </form>
 
-      <p id="signin-status" role="status" aria-live="polite"></p>
       <p id="policy">By continuing, you agree to the LinkedIn <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</p>
 
       <div class="divider" role="separator" aria-label="or">
@@ -110,12 +109,10 @@
     }
 
     const signinForm = document.querySelector("#signin-form");
-    const signinStatus = document.querySelector("#signin-status");
 
-    if (signinForm && signinStatus) {
+    if (signinForm) {
       signinForm.addEventListener("submit", (event) => {
         event.preventDefault();
-        signinStatus.textContent = "The fields are filled in. Account sign-in needs a server and is not connected on this static site.";
       });
     }
   </script>

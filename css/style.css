@@ -259,14 +259,6 @@ input[type="date"].text-field {
     margin: 14px 0;
 }
 
-#signin-status {
-    font-size: 13px;
-    line-height: 1.4;
-    color: rgba(0, 0, 0, 0.6);
-    text-align: center;
-    margin-top: 12px;
-}
-
 /* druzbena omrezja) */
 .social-button {
     width: 100%;

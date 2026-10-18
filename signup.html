@@ -6,6 +6,7 @@
   <title>Sign Up | LinkedIn</title>
   <link rel="icon" type="image/x-icon" href="pictures/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
 
@@ -48,21 +49,39 @@
 
         <label class="field-label" for="password">Password</label>
         <div class="password-field">
-          <input id="password" class="text-field" type="password" autocomplete="new-password" required minlength="6">
+          <input id="password" class="text-field" type="password" autocomplete="new-password" required minlength="8">
           <button id="toggle-password" class="password-toggle" type="button" aria-label="Show password">Show</button>
+        </div>
+
+        <div id="password-strength-container" class="password-strength-container">
+          <div class="strength-header">
+            <span>Password strength:</span>
+            <span id="strength-label" class="strength-label">Too weak</span>
+          </div>
+          <div class="strength-track">
+            <div id="strength-fill" class="strength-fill"></div>
+          </div>
+          <ul class="strength-requirements" id="strength-requirements">
+            <li id="req-length" class="req-item"><span class="req-icon">&#10005;</span> At least 8 characters</li>
+            <li id="req-upper" class="req-item"><span class="req-icon">&#10005;</span> At least 1 uppercase letter (A-Z)</li>
+            <li id="req-lower" class="req-item"><span class="req-icon">&#10005;</span> At least 1 lowercase letter (a-z)</li>
+            <li id="req-number" class="req-item"><span class="req-icon">&#10005;</span> At least 1 number (0-9)</li>
+            <li id="req-special" class="req-item"><span class="req-icon">&#10005;</span> At least 1 special character (!@#$%^&amp;*)</li>
+          </ul>
         </div>
 
         <label class="field-label" for="confirm-password">Confirm password</label>
         <div class="password-field">
-          <input id="confirm-password" class="text-field" type="password" autocomplete="new-password" required minlength="6">
+          <input id="confirm-password" class="text-field" type="password" autocomplete="new-password" required minlength="8">
           <button id="toggle-confirm-password" class="password-toggle" type="button" aria-label="Show password">Show</button>
         </div>
         <p id="password-error" class="error-message">Passwords do not match.</p>
 
         <label class="field-label" for="dob">Date of birth</label>
         <input id="dob" class="text-field" type="date" required>
+        <p id="dob-error" class="error-message"></p>
 
-        <p id="policy">By clicking Agree & Join or Continue, you agree to the LinkedIn <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</p>
+        <p id="policy">By clicking Agree &amp; Join or Continue, you agree to the LinkedIn <a href="https://www.linkedin.com/legal/user-agreement" target="_blank" rel="noopener noreferrer">User Agreement</a>, <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>, and <a href="https://www.linkedin.com/legal/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.</p>
 
         <div id="submit">
           <button id="sign-up" type="submit">Agree &amp; Join</button>
@@ -91,68 +110,158 @@
     <div class="footer-content">
       <span class="footer-logo">Linked<span class="footer-logo-in">in</span></span>
       <span>&copy; 2026</span>
-      <a href="#">User Agreement</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Community Guidelines</a>
-      <a href="#">Cookie Policy</a>
-      <a href="#">Copyright Policy</a>
-      <a href="#">Send Feedback</a>
-      <a href="#">Language</a>
+      <a href="https://www.linkedin.com/legal/user-agreement" target="_blank" rel="noopener noreferrer">User Agreement</a>
+      <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      <a href="https://www.linkedin.com/legal/professional-community-policies" target="_blank" rel="noopener noreferrer">Community Guidelines</a>
+      <a href="https://www.linkedin.com/legal/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy</a>
+      <a href="https://www.linkedin.com/legal/copyright-policy" target="_blank" rel="noopener noreferrer">Copyright Policy</a>
+      <a href="https://www.linkedin.com/help/linkedin" target="_blank" rel="noopener noreferrer">Send Feedback</a>
+
+      <div class="language-menu-wrapper" id="language-menu-wrapper">
+        <button type="button" class="language-trigger" id="language-trigger" aria-haspopup="true" aria-expanded="false">
+          Language <span class="language-caret">&#9662;</span>
+        </button>
+        <div class="language-dropdown" id="language-dropdown" role="menu">
+          <div class="language-list">
+            <button type="button" class="language-item" data-lang="ar">
+              <span class="lang-native">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
+              <span class="lang-name">(Arabic)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="bn">
+              <span class="lang-native">&#2476;&#2494;&#2434;&#2482;&#2494;</span>
+              <span class="lang-name">(Bangla)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="cs">
+              <span class="lang-native">&#268;e&#353;tina</span>
+              <span class="lang-name">(Czech)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="da">
+              <span class="lang-native">Dansk</span>
+              <span class="lang-name">(Danish)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="de">
+              <span class="lang-native">Deutsch</span>
+              <span class="lang-name">(German)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="el">
+              <span class="lang-native">&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;</span>
+              <span class="lang-name">(Greek)</span>
+            </button>
+            <button type="button" class="language-item active" data-lang="en">
+              <span class="lang-native">English</span>
+              <span class="lang-name">(English)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="es">
+              <span class="lang-native">Espa&#241;ol</span>
+              <span class="lang-name">(Spanish)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="fa">
+              <span class="lang-native">&#1601;&#1575;&#1585;&#1587;&#1740;</span>
+              <span class="lang-name">(Persian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="fi">
+              <span class="lang-native">Suomi</span>
+              <span class="lang-name">(Finnish)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="fr">
+              <span class="lang-native">Fran&#231;ais</span>
+              <span class="lang-name">(French)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="hi">
+              <span class="lang-native">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;</span>
+              <span class="lang-name">(Hindi)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="hu">
+              <span class="lang-native">Magyar</span>
+              <span class="lang-name">(Hungarian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="id">
+              <span class="lang-native">Bahasa Indonesia</span>
+              <span class="lang-name">(Indonesian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="it">
+              <span class="lang-native">Italiano</span>
+              <span class="lang-name">(Italian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="he">
+              <span class="lang-native">&#1506;&#1489;&#1512;&#1497;&#1514;</span>
+              <span class="lang-name">(Hebrew)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="ja">
+              <span class="lang-native">&#26085;&#26412;&#35486;</span>
+              <span class="lang-name">(Japanese)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="ko">
+              <span class="lang-native">&#54620;&#44397;&#50612;</span>
+              <span class="lang-name">(Korean)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="mr">
+              <span class="lang-native">&#2350;&#2352;&#2364;&#2336;&#2368;</span>
+              <span class="lang-name">(Marathi)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="nl">
+              <span class="lang-native">Nederlands</span>
+              <span class="lang-name">(Dutch)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="no">
+              <span class="lang-native">Norsk</span>
+              <span class="lang-name">(Norwegian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="pl">
+              <span class="lang-native">Polski</span>
+              <span class="lang-name">(Polish)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="pt">
+              <span class="lang-native">Portugu&#234;s</span>
+              <span class="lang-name">(Portuguese)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="ro">
+              <span class="lang-native">Rom&#226;n&#259;</span>
+              <span class="lang-name">(Romanian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="ru">
+              <span class="lang-native">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</span>
+              <span class="lang-name">(Russian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="sl">
+              <span class="lang-native">Sloven&#353;&#269;ina</span>
+              <span class="lang-name">(Slovenian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="sv">
+              <span class="lang-native">Svenska</span>
+              <span class="lang-name">(Swedish)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="tl">
+              <span class="lang-native">Tagalog</span>
+              <span class="lang-name">(Tagalog)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="tr">
+              <span class="lang-native">T&#252;rk&#231;e</span>
+              <span class="lang-name">(Turkish)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="uk">
+              <span class="lang-native">&#1059;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;</span>
+              <span class="lang-name">(Ukrainian)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="vi">
+              <span class="lang-native">Ti&#7871;ng Vi&#7871;t</span>
+              <span class="lang-name">(Vietnamese)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="zh-cn">
+              <span class="lang-native">&#31616;&#20307;&#20013;&#25991;</span>
+              <span class="lang-name">(Chinese Simplified)</span>
+            </button>
+            <button type="button" class="language-item" data-lang="zh-tw">
+              <span class="lang-native">&#32321;&#39636;&#20013;&#25991;</span>
+              <span class="lang-name">(Chinese Traditional)</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const password = document.querySelector("#password");
-    const togglePassword = document.querySelector("#toggle-password");
-
-    if (password && togglePassword) {
-      togglePassword.addEventListener("click", () => {
-        const isHidden = password.type === "password";
-        password.type = isHidden ? "text" : "password";
-        togglePassword.textContent = isHidden ? "Hide" : "Show";
-        togglePassword.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
-      });
-    }
-
-    const confirmPassword = document.querySelector("#confirm-password");
-    const toggleConfirmPassword = document.querySelector("#toggle-confirm-password");
-
-    if (confirmPassword && toggleConfirmPassword) {
-      toggleConfirmPassword.addEventListener("click", () => {
-        const isHidden = confirmPassword.type === "password";
-        confirmPassword.type = isHidden ? "text" : "password";
-        toggleConfirmPassword.textContent = isHidden ? "Hide" : "Show";
-        toggleConfirmPassword.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
-      });
-    }
-
-    const passwordError = document.querySelector("#password-error");
-    const signupForm = document.querySelector("#signup-form");
-
-    function checkPasswordMatch() {
-      if (confirmPassword.value && password.value !== confirmPassword.value) {
-        passwordError.style.display = "block";
-        confirmPassword.classList.add("input-error");
-        confirmPassword.setCustomValidity("Passwords do not match");
-      } else {
-        passwordError.style.display = "none";
-        confirmPassword.classList.remove("input-error");
-        confirmPassword.setCustomValidity("");
-      }
-    }
-
-    if (password && confirmPassword && passwordError) {
-      password.addEventListener("input", checkPasswordMatch);
-      confirmPassword.addEventListener("input", checkPasswordMatch);
-    }
-
-    if (signupForm) {
-      signupForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        window.location.assign("index.html");
-      });
-    }
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/signup.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@ is a simple school project that simulates the login and registration system of a
 
 * **USER REGISTRATION**: Create a new account with first name, last name, email, password, confirm password, and date of birth.
 * **USER LOGIN**: Authenticate and access the platform using email or phone and password.
-* **FORM VALIDATION**: Real-time password matching validation and required input checks.
+* **FORM VALIDATION**: Real-time password strength meter (filler bar), password requirements checklist, confirm password matching, and date of birth limits (150-year limit and future birth date protection).
 * **RESPONSIVE DESIGN**: Clean and simple interface for a user-friendly experience styled to match LinkedIn.
 
 ## TECHNOLOGIES USED
@@ -32,6 +32,9 @@ LinkedIn_Login/
 ├── signup.html         # Registration HTML file
 ├── css/
 │   └── style.css       # Stylesheets
+├── js/
+│   ├── login.js        # Login page interactivity & authentication
+│   └── signup.js       # Signup validation, strength meter & DOB checks
 ├── pictures/
 │   ├── favicon.ico     # Favicon
 │   ├── login.png       # Screenshot of login page
@@ -49,6 +52,11 @@ LinkedIn_Login/
 OR
 
 Open it from GitHub Pages: [LinkedIn_Login](https://alentrost.github.io/LinkedIn_Login/)
+
+## SIMULATION CREDENTIALS
+
+* **Email:** `example@gmail.com`
+* **Password:** `Password123!`
 
 ## AUTHOR
 
